@@ -42,14 +42,14 @@ const Navbar = () => {
             </Link>
         </li>
         <li>
-            <a
-                href="/"
+            <Link
+                to="/login"
                 className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-[#000] transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                 aria-label="Login"
                 title="Login"
             >
                 Login
-            </a>
+            </Link>
         </li>
     </>
     const [isMenuOpen, setIsMenuOpen] = useState(false);
