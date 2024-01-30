@@ -3,10 +3,11 @@ import { useEffect, useState } from "react";
 const Banner = () => {
     const [currentSlider, setCurrentSlider] = useState(0);
     const sliders = [
-        { img: "https://source.unsplash.com/600x600/?bedroom", }, { img: "https://source.unsplash.com/600x600/?room", },
-        { img: "https://source.unsplash.com/600x600/?livingrooms", },
-        { img: "https://source.unsplash.com/600x600/?livingroom", },
-        { img: "https://source.unsplash.com/600x600/?bedrooms", },
+        { img: "https://i.ibb.co/rvKqHRr/photo-1588072432836-e10032774350.jpg", }, 
+        { img: "https://i.ibb.co/VQS6Sjn/photo-1588072432904-843af37f03ed.jpg", },
+        { img: "https://i.ibb.co/G22zq6j/photo-1577896851231-70ef18881754.jpg", },
+        { img: "https://i.ibb.co/PZDwc7R/photo-1588075592405-d3d4f0846961.jpg", },
+        { img: "https://i.ibb.co/SxCNWPG/premium-photo-1683121693735-df6b63dc5b8b.jpg", },
     ];
 
     const prevSlider = () => setCurrentSlider((currentSlider) => currentSlider === 0 ? sliders.length - 1 : currentSlider - 1);
