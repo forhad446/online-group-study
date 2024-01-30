@@ -1,27 +1,54 @@
 import { useState } from "react";
 import logo from './../../assets/logo.png'
 import { MdOutlineMenu, MdClose } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     const navItems = <>
         <li>
-            <a
-                href="/"
-                aria-label="Our product"
-                title="Our product"
+            <Link
+                to="/"
+                title="All Assignments"
                 className="font-medium tracking-wide text-[#000] transition-colors duration-200 hover:text-teal-accent-400"
             >
-                Product
-            </a>
+                Assignments
+            </Link>
+        </li>
+        <li>
+            <Link
+                to="/"
+                title="Create Assignments"
+                className="font-medium tracking-wide text-[#000] transition-colors duration-200 hover:text-teal-accent-400"
+            >
+                Create Assignments
+            </Link>
+        </li>
+        <li>
+            <Link
+                to="/"
+                title="My Assignments"
+                className="font-medium tracking-wide text-[#000] transition-colors duration-200 hover:text-teal-accent-400"
+            >
+                My Assignments
+            </Link>
+        </li>
+        <li>
+            <Link
+                to="/"
+                title="Submitted Assignments"
+                className="font-medium tracking-wide text-[#000] transition-colors duration-200 hover:text-teal-accent-400"
+            >
+                Submitted Assignments
+            </Link>
         </li>
         <li>
             <a
                 href="/"
                 className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-[#000] transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                aria-label="Sign up"
-                title="Sign up"
+                aria-label="Login"
+                title="Login"
             >
-                Sign up
+                Login
             </a>
         </li>
     </>
