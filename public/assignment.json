@@ -1,0 +1,50 @@
+[
+    {
+        "title": "Mathematics Quiz",
+        "description": "Solve a set of mathematical problems involving algebra and geometry.",
+        "marks": 50,
+        "thumbnailImageUrl": "https://example.com/math_quiz_thumbnail.jpg",
+        "difficultyLevel": "medium",
+        "dueDate": "2024-02-10"
+    },
+    {
+        "title": "Literature Analysis",
+        "description": "Write a critical analysis of a selected literary piece.",
+        "marks": 40,
+        "thumbnailImageUrl": "https://example.com/lit_analysis_thumbnail.jpg",
+        "difficultyLevel": "hard",
+        "dueDate": "2024-02-15"
+    },
+    {
+        "title": "Programming Assignment",
+        "description": "Code a simple program using your preferred programming language.",
+        "marks": 60,
+        "thumbnailImageUrl": "https://example.com/programming_assignment_thumbnail.jpg",
+        "difficultyLevel": "easy",
+        "dueDate": "2024-02-12"
+    },
+    {
+        "title": "History Research Paper",
+        "description": "Research and write about a significant historical event.",
+        "marks": 45,
+        "thumbnailImageUrl": "https://example.com/history_paper_thumbnail.jpg",
+        "difficultyLevel": "medium",
+        "dueDate": "2024-02-18"
+    },
+    {
+        "title": "Science Experiment Report",
+        "description": "Conduct a simple scientific experiment and submit a detailed report.",
+        "marks": 55,
+        "thumbnailImageUrl": "https://example.com/science_experiment_thumbnail.jpg",
+        "difficultyLevel": "hard",
+        "dueDate": "2024-02-14"
+    },
+    {
+        "title": "Language Arts Essay",
+        "description": "Write an essay on a contemporary social issue using persuasive language.",
+        "marks": 35,
+        "thumbnailImageUrl": "https://example.com/language_arts_essay_thumbnail.jpg",
+        "difficultyLevel": "easy",
+        "dueDate": "2024-02-08"
+    }
+]

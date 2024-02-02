@@ -3,6 +3,7 @@ import MainLayout from "../Layout/MainLayout";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Home from "../Pages/Home/Home/Home";
 import Form from "../Pages/Shared/Form/Form";
+import AllAssignment from "../Pages/Assignments/AllAssignments/AllAssignment";
 
 const Route = createBrowserRouter([
     {
@@ -13,6 +14,10 @@ const Route = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>
+            },
+            {
+                path: '/all_assignment',
+                element: <AllAssignment></AllAssignment>
             }
         ]
     },

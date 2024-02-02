@@ -2,12 +2,13 @@ import { useState } from "react";
 import logo from './../../assets/logo.png'
 import { MdOutlineMenu, MdClose } from "react-icons/md";
 import { Link } from "react-router-dom";
+import useAllAssignment from "../../hooks/useAllAssignment";
 
 const Navbar = () => {
     const navItems = <>
         <li>
             <Link
-                to="/"
+                to="/all_assignment"
                 title="All Assignments"
                 className="font-medium tracking-wide text-[#000] transition-colors duration-200 hover:text-teal-accent-400"
             >
@@ -52,6 +53,10 @@ const Navbar = () => {
             </Link>
         </li>
     </>
+
+    const assignment = useAllAssignment()
+    console.log(assignment);
+
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     return (
         <div className="bg-[#ACC8E5]">
