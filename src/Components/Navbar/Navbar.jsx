@@ -62,17 +62,17 @@ const Navbar = () => {
         <div className="bg-[#ACC8E5]">
             <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
                 <div className="relative flex items-center justify-between">
-                    <a
+                    <Link
                         href="/"
-                        aria-label="Company"
-                        title="Company"
+                        aria-label="Group Study"
+                        title="Group Study"
                         className="inline-flex items-center"
                     >
                         <img src={logo} alt="" />
                         <span className="ml-2 text-xl font-bold tracking-wide text-[#000] uppercase">
                             Group Study
                         </span>
-                    </a>
+                    </Link>
                     <ul className=" items-center hidden space-x-8 lg:flex">
                         {navItems}
                     </ul>
@@ -81,17 +81,17 @@ const Navbar = () => {
                     <div className="p-5 bg-[#ACC8E5] border rounded shadow-sm">
                         <div className="flex items-center justify-between mb-4">
                             <div>
-                                <a
-                                    href="/"
-                                    aria-label="Company"
-                                    title="Company"
+                                <Link
+                                    to="/"
+                                    aria-label="Group Study"
+                                    title="Group Study"
                                     className="inline-flex items-center"
                                 >
                                     <img src={logo} alt="" />
                                     <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
                                         Group Study
                                     </span>
-                                </a>
+                                </Link>
                             </div>
                             {/* menu button */}
                             <div>

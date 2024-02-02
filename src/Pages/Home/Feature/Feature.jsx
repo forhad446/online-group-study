@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import useAllAssignment from "../../../hooks/useAllAssignment";
 
 const Feature = () => {
@@ -17,7 +18,7 @@ const Feature = () => {
                                     {item?.difficultyLevel}
                                 </button>
                             </div>
-                            <img className="rounded-lg bg-black/40 w-full h-full" src="https://source.unsplash.com/300x300/?macbook" alt="img" />
+                            <img className="rounded-lg bg-black/40 w-full h-full" src={item?.thumbnailImageUrl} alt={item?.title} />
                         </div>
                         <div className="text-center w-[85%] mx-auto font-semibold space-y-2">
                             <h6 className="text-sm md:text-base lg:text-lg">
@@ -28,7 +29,9 @@ const Feature = () => {
                             </p>
                         </div>
                         <div className="flex items-center justify-center flex-wrap gap-6 text-sm md:text-base">
-                            <button className="px-8 py-2 w-full rounded-lg bg-[#49B2FF] hover:bg-sky-600 duration-300 hover:scale-105 text-white font-semibold font-sans">View Assignment</button>
+                            <button className="px-8 py-2 w-full rounded-lg bg-[#49B2FF] hover:bg-sky-600 duration-300 hover:scale-105 text-white font-semibold font-sans">
+                                <Link to={`/assignment_details/${item?.id}`}>View Assignment</Link>
+                            </button>
                             <button className="px-8 py-2 w-full rounded-lg bg-[#49B2FF] hover:bg-sky-600 duration-300 hover:scale-105 text-white font-semibold font-sans">Update Assignment</button>
                         </div>
                     </div>
