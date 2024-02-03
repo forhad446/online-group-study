@@ -12,12 +12,10 @@ const Navbar = () => {
 
     const handleLogOut = () => {
         logOut()
-            .then(console.log('handle logout success'))
-
     }
 
     const svgs = [
-        { svg: (<MdLogout onClick={handleLogOut} />) },
+        { svg: (<MdLogout title="Log Out" onClick={handleLogOut} />) },
         { svg: (<MdOutlineSettings />) },
         { svg: (<MdDashboard />) }
     ];
@@ -62,7 +60,7 @@ const Navbar = () => {
         {
             user?.email ?
                 <>
-                    <div className="flex items-center flex-wrap justify-around">
+                    <div className="hidden lg:flex items-center flex-wrap justify-around">
                         <div className="relative group">
                             <img className="w-[40px] h-[40px] bg-slate-500 object-cover rounded-full border-2 border-white shadow-[0px_2px_8px_0px_rgba(99,99,99,0.4)]" src={user?.photoURL ? user?.photoURL : "https://source.unsplash.com/300x300/?profile"} alt="" />
                             <span className="h-5 w-5 bg-white p-[2px] shadow-[0px_2px_8px_0px_rgba(99,99,99,0.4)]  group-hover:-rotate-180 duration-500 absolute rounded-full -bottom-2 left-[50%] -translate-x-1/2">

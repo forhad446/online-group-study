@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import { Helmet } from "react-helmet-async";
 
 const Form = () => {
 
-    const { createUser, googleSignIn, signIn } = useAuth()
+    const { user, createUser, googleSignIn, signIn } = useAuth()
     const [register, setRegister] = useState(false);
 
     // handleRegister
@@ -68,13 +68,16 @@ const Form = () => {
     }
     return (
         <>
+            <div>
+                {user?.email &&  <Navigate to="/" />}
+            </div>
             <Helmet>
                 {
                     register ?
-                    <title>Register || Group Study</title> :
-                    <title>Login || Group Study</title>
+                        <title>Register || Group Study</title> :
+                        <title>Login || Group Study</title>
                 }
-                
+
             </Helmet>
             <div className="w-80 md:w-96 lg:w-[800px] mx-auto bg-white flex items-center relative overflow-hidden shadow-xl">
                 {/* register form  */}
