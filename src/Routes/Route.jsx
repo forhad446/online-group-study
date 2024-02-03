@@ -5,6 +5,7 @@ import Home from "../Pages/Home/Home/Home";
 import Form from "../Pages/Shared/Form/Form";
 import AllAssignment from "../Pages/Assignments/AllAssignments/AllAssignment";
 import AssignmentDetails from "../Pages/Assignments/AssignmentDetails/AssignmentDetails";
+import PrivateRoute from "./PrivateRoute";
 
 const Route = createBrowserRouter([
     {
@@ -22,7 +23,7 @@ const Route = createBrowserRouter([
             },
             {
                 path: '/assignment_details/:id',
-                element: <AssignmentDetails></AssignmentDetails>
+                element: <PrivateRoute><AssignmentDetails /></PrivateRoute> 
             }
         ]
     },
