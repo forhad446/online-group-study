@@ -5,10 +5,13 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
 import Swal from "sweetalert2";
+import useAuth from "../../../hooks/useAuth";
 
 
 const CreateAssignment = () => {
     const [startDate, setStartDate] = useState(new Date());
+    const { user } = useAuth();
+    console.log(user?.email);
 
     const handleAddAssignment = e => {
         e.preventDefault();
@@ -17,9 +20,10 @@ const CreateAssignment = () => {
         const description = form.description.value;
         const marks = form.marks.value;
         const thumbnailImageUrl = form.imageLink.value;
-        const level = form.level.value;
+        const difficultyLevel = form.level.value;
         const dueDate = form.dueDate.value;
-        const assignmentInfo = { title, description, marks, thumbnailImageUrl, level, dueDate }
+        const assignmentCreatorEmail = user?.email;
+        const assignmentInfo = { title, description, marks, thumbnailImageUrl, difficultyLevel, dueDate, assignmentCreatorEmail }
 
         console.log(assignmentInfo);
         if (!title) {
