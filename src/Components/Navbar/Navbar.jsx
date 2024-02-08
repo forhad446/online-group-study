@@ -41,7 +41,7 @@ const Navbar = () => {
         </li>
         <li>
             <Link
-                to="/"
+                to="/my_assignments"
                 title="My Assignments"
                 className="font-medium tracking-wide text-[#000] transition-colors duration-200 hover:text-teal-accent-400"
             >

@@ -11,7 +11,6 @@ import useAuth from "../../../hooks/useAuth";
 const CreateAssignment = () => {
     const [startDate, setStartDate] = useState(new Date());
     const { user } = useAuth();
-    console.log(user?.email);
 
     const handleAddAssignment = e => {
         e.preventDefault();
