@@ -69,7 +69,7 @@ const AllAssignment = () => {
                             </div>
                             <div className="flex items-center justify-center flex-wrap gap-6 text-sm md:text-base">
                                 <button className="px-8 py-2 w-full rounded-lg bg-[#49B2FF] hover:bg-sky-600 duration-300 hover:scale-105 text-white font-semibold font-sans">
-                                    <Link to={`/assignment_details/${item?.id}`}>View Assignment</Link>
+                                    <Link to={`/assignment_details/${item?._id}`}>View Assignment</Link>
                                 </button>
                                 <button className="px-8 py-2 w-full rounded-lg bg-[#49B2FF] hover:bg-sky-600 duration-300 hover:scale-105 text-white font-semibold font-sans">Update Assignment</button>
                             </div>

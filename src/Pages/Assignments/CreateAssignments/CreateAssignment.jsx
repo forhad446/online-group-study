@@ -4,6 +4,7 @@ import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 
 const CreateAssignment = () => {
@@ -21,11 +22,22 @@ const CreateAssignment = () => {
         const assignmentInfo = { title, description, marks, imageLink, level, dueDate }
 
         console.log(assignmentInfo);
+        if (!title) {
+            return console.log('title must needed');
+        }
+        if (!description) {
+            return console.log('Description must needed');
+        }
         axios.post('http://localhost:5000/assignment', assignmentInfo)
-            .then((res) => {
-                console.log(res.data);
+            .then(() => {
+                Swal.fire({
+                    title: "Good job!",
+                    text: "New Assignment Added Done!",
+                    icon: "success"
+                });
+                form.reset();
             })
-            .catch((error) => {console.log(error);});
+            .catch((error) => { console.log(error); });
     }
     return (
         <>

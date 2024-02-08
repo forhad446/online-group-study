@@ -4,20 +4,16 @@ import PageTitle from "../../Shared/PageTitle/PageTitle";
 import { Helmet } from "react-helmet-async";
 import { FaTwitter, FaInstagramSquare, FaFacebook, FaYoutube } from "react-icons/fa";
 import { FaFilePdf } from "react-icons/fa6";
+import useAllAssignment from "../../../hooks/useAllAssignment";
 
 const AssignmentDetails = () => {
 
     const { id } = useParams()
-    const [assignment, setAssignment] = useState([])
+    // const [assignment, setAssignment] = useState([])
     const [openModal, setOpenModal] = useState(false);
+    const assignment = useAllAssignment()
 
-    useEffect(() => {
-        fetch('./../../../../public/assignment.json')
-            .then(res => res.json())
-            .then(data => setAssignment(data))
-    }, [id])
-
-    const isExit = assignment.find(item => item?.id === parseInt(id));
+    const isExit = assignment.find(item => item?._id === id);
 
     return (
         <>
