@@ -16,10 +16,10 @@ const CreateAssignment = () => {
         const title = form.title.value;
         const description = form.description.value;
         const marks = form.marks.value;
-        const imageLink = form.imageLink.value;
+        const thumbnailImageUrl = form.imageLink.value;
         const level = form.level.value;
         const dueDate = form.dueDate.value;
-        const assignmentInfo = { title, description, marks, imageLink, level, dueDate }
+        const assignmentInfo = { title, description, marks, thumbnailImageUrl, level, dueDate }
 
         console.log(assignmentInfo);
         if (!title) {
