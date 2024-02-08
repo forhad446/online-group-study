@@ -4,6 +4,8 @@ import useAllAssignment from "../../../hooks/useAllAssignment";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
+import Swal from "sweetalert2";
+import axios from "axios";
 
 const MyAssignment = () => {
     const [selectedLevel, setSelectedLevel] = useState('all');
@@ -29,8 +31,34 @@ const MyAssignment = () => {
     };
 
     // handle Delete Assignment
-    const handleDeleteAssignment = (id) =>{
-        console.log(id);
+    const handleDeleteAssignment = (id) => {
+        if (id) {
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You want to delete it!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    axios.delete(`http://localhost:5000/myAssignment/${id}`)
+                        .then(res => {
+                            console.log(res);
+                        })
+                        .catch(error => {
+                            console.error(error);
+                        });
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "Your assignment has been deleted.",
+                        icon: "success"
+                    });
+                }
+            });
+        }
+
     }
     return (
         <>
