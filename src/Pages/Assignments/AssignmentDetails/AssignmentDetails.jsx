@@ -16,6 +16,7 @@ const AssignmentDetails = () => {
     const [openModal, setOpenModal] = useState(false);
     const assignment = useAllAssignment()
     const { user } = useAuth()
+    console.log(user?.displayName);
 
     const isExit = assignment.find(item => item?._id === id);
 
@@ -24,8 +25,13 @@ const AssignmentDetails = () => {
         const form = e.target;
         const pdfLink = form.pdfLink.value;
         const userComment = form.userComment.value;
+        const examineeName = form.examineeName.value;
+        const title = isExit?.title;
+        const marks = isExit?.marks;
         const postedEmail = user?.email;
-        const formInfo = { pdfLink, userComment, postedEmail}
+        const feedback = '';
+        const status = 'pending';
+        const formInfo = { examineeName, title, pdfLink, userComment, marks, postedEmail, feedback, status }
         if (pdfLink && userComment) {
             axios.post('http://localhost:5000/userPost', formInfo)
                 .then(() => {
@@ -112,7 +118,12 @@ const AssignmentDetails = () => {
                             Assignment submission form
                         </h1>
                         <div className="space-y-5">
-                            <label htmlFor="pdfLink" className="block">Assignment Pdf Link</label>
+                            <div className="relative">
+                                <input id="email" type="text" name="examineeName" placeholder="Examinee Name" className="p-3 block w-full pl-10 drop-shadow-lg rounded-lg outline-none" />
+                                <span className="absolute top-1/4 left-2">
+                                    <FaFilePdf />
+                                </span>
+                            </div>
                             <div className="relative">
                                 <input id="email" type="text" name="pdfLink" placeholder="assignment pdf link" className="p-3 block w-full pl-10 drop-shadow-lg rounded-lg outline-none" />
                                 <span className="absolute top-1/4 left-2">
@@ -121,7 +132,7 @@ const AssignmentDetails = () => {
                             </div>
                             <label htmlFor="userComment" className="block">User Comment</label>
                             <div className="relative">
-                                <textarea className="p-3 block w-full pl-10 drop-shadow-lg rounded-lg outline-none" name="userComment" id="" cols="30" rows="10"></textarea>
+                                <textarea className="p-3 block w-full pl-10 drop-shadow-lg rounded-lg outline-none" name="userComment" id="" cols="1" rows="4"></textarea>
                             </div>
                         </div>
                         {/* button type will be submit for handling form submission*/}
