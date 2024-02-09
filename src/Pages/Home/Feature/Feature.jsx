@@ -22,7 +22,7 @@ const Feature = () => {
                         </div>
                         <div className="text-center w-[85%] mx-auto font-semibold space-y-2">
                             <h6 className="text-sm md:text-base lg:text-lg">
-                                {item?.title}
+                                {item?.title.slice(0,24)}
                             </h6>
                             <p className="text-gray-400 text-xs md:text-sm font-semibold">
                                 <span>Total Marks :</span> {item?.marks}
@@ -30,7 +30,7 @@ const Feature = () => {
                         </div>
                         <div className="flex items-center justify-center flex-wrap gap-6 text-sm md:text-base">
                             <button className="px-8 py-2 w-full rounded-lg bg-[#49B2FF] hover:bg-sky-600 duration-300 hover:scale-105 text-white font-semibold font-sans">
-                                <Link to={`/assignment_details/${item?.id}`}>View Assignment</Link>
+                                <Link to={`/assignment_details/${item?._id}`}>View Assignment</Link>
                             </button>
                             <button className="px-8 py-2 w-full rounded-lg bg-[#49B2FF] hover:bg-sky-600 duration-300 hover:scale-105 text-white font-semibold font-sans">Update Assignment</button>
                         </div>
