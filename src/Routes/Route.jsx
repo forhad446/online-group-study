@@ -40,15 +40,15 @@ const Route = createBrowserRouter([
             },
             {
                 path: '/submitted_assignments',
-                element: <SubmittedAssignment></SubmittedAssignment>
+                element: <PrivateRoute><SubmittedAssignment /></PrivateRoute>
             },
             {
                 path: '/create_assignment',
-                element: <CreateAssignment></CreateAssignment>
+                element: <PrivateRoute><CreateAssignment /></PrivateRoute>
             },
             {
                 path: '/my_assignments',
-                element: <MyAssignment></MyAssignment>
+                element: <PrivateRoute><MyAssignment /></PrivateRoute>
             }
         ]
     },
